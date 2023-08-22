@@ -19,11 +19,15 @@ import java.util.List;
 public class AnimeService {
     private final AnimeRepository animeRepository;
 
-    public Page<Anime> listAll(Pageable pageable){
+    public Page<Anime> listAll(Pageable pageable) {
         return animeRepository.findAll(pageable);
     }
 
-    public Anime findByIdOrThrowBadRequestException(long id){
+    public List<Anime> listAllNonPageable() {
+        return animeRepository.findAll();
+    }
+
+    public Anime findByIdOrThrowBadRequestException(long id) {
         return animeRepository.findById(id)
                 .orElseThrow(() -> new BadRequestException("Anime not Found"));
     }
@@ -40,11 +44,11 @@ public class AnimeService {
 //        return save;
     }
 
-    public void delete(long id){
+    public void delete(long id) {
         animeRepository.delete(findByIdOrThrowBadRequestException(id));
     }
 
-    public void replace(AnimePutRequestBody animePutRequestBody){
+    public void replace(AnimePutRequestBody animePutRequestBody) {
         Anime savedAnime = findByIdOrThrowBadRequestException(animePutRequestBody.getId());
         Anime anime = AnimeMapper.INSTANCE.toAnime(animePutRequestBody);
         anime.setId(savedAnime.getId());
@@ -52,7 +56,9 @@ public class AnimeService {
         animeRepository.save(anime);
     }
 
-    public List<Anime> findByName(String name){
+    public List<Anime> findByName(String name) {
         return animeRepository.findByName(name);
     }
+
+
 }
