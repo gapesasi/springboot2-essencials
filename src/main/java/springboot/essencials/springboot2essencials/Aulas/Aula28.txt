@@ -1,0 +1,12 @@
+RestTemplate POST
+
+RestTemplate.postForObject  -> Retorna o Objeto (Pode ser utilizado para retornar uma lista de objetos)
+            .postForEntity  -> Retorna um wrapper ResponseEntity com o objeto
+            .exchange       -> Retorna um wrapper ResponseEntity com o objeto requisitado
+
+            .postForObject(<url da requisição>, <classe a ser retornada>, <variáveis de url>)
+            .postForEntity(<url da requisição>, <classe a ser retornada>, <variáveis de url>)
+            .exchange(<url da requisição>,
+                      <método HTTP a ser utilizado>,
+                      <requestEntity>,
+                      <ParameterizedTypeReference - Ex: "new ParameterizedTypeReference<>() {}"> )
