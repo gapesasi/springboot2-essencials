@@ -1,0 +1,18 @@
+@SpringBootApplication -> Gerar classe de inicialização
+
+@AutoWired
+ - Utilizado para injeção de dependências
+
+Para uma classe ser automaticamente injetada, é necessário adicionar uma anotação
+para transforma-la em Spring Bean
+ - @Component
+ - @Service
+ - @Repository
+
+- Recomendado Utilizar injeção de dependências por construtor e não direto em atributos.
+
+Anotações Lombok:
+ - @AllArgsConstructor
+ - @RequiredArgsConstructor
+
+@Configuration -> Transforma em bean escaneável pelo String e insere-o no contexto de configuração.
