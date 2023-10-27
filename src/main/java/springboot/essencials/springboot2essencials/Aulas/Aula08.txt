@@ -1,0 +1,26 @@
+Em controller, retornar ResponseEntity com status da requisição e data.
+
+Ex:
+ResponseEntity<>(data, HttpStatus.ok)
+ResponseEntity.ok(data)
+
+Padrões de URL nas requisições
+
+@GetMapping(path = "/{id}") -> (id é uma path variable)
+Receber @PathVariable long id como parâmetro de método
+
+Manejar erro de requisição com ResponseStatusException
+
+.orElseThrow(() -> new BadRequestException("Anime not Found"));
+.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Anime not Found"));
+
+Configuração de stack trace de erros
+- Em application.yml
+  - server:
+        error:
+            include-stacktrace: on_param
+
+Quando include-stacktrace = on_param
+    para visualizar o stack trace do erro é necesário adicionar o header ?trace=true
+
+

@@ -1,0 +1,11 @@
+@PostMapping
+
+Retorno é opcional. Nesse caso, retorna o objeto inteiro.
+
+@RequestBody Classe
+ - Caso ele encontre os parâmetros da resposta iguais aos atributos da classe,
+    realiza o mapeamento automático da resposta para a classe
+ - Caso exista algum atributo que terá o nome diferente, é possível adicionar
+    a propriedade @JsonProperty("name") com o nome sendo o que virá do db,
+        para que o mapeamento ocorra como desejado.
+ - Retorno: return new ResponseEntity<>(func(data), HttpStatus.CREATED);

@@ -1,0 +1,16 @@
+Organizando Projetos
+
+- controller
+    - Expõe endpoints
+- service
+    - Classe responsável pelo gerenciamento da regra de negócios
+- repository
+    - Conexão com o banco de dados
+
+LOMBOK - Anotações
+
+@Data
+- Gera Getter, Setter, Equals, HashCode e ToString
+
+@AllArgsConstructor
+Gera um construtor com todos os argumentos.

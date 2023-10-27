@@ -1,0 +1,6 @@
+Hot Swap
+- Fazer com que não seja necessário reiniciar aplicação e esperar vários segundos para ver mudanças.
+Adicionar Depência:
+
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-devtools</artifactId>

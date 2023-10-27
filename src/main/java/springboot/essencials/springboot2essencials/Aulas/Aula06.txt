@@ -1,0 +1,24 @@
+Gerando o projeto com start.spring.io
+
+https://start.spring.io
+
+Project      -> Maven
+Language     -> Java
+Spring Boot  -> Última versão LTS
+
+Group        -> springboot.essencials (Não é padrão, apenas o deste projeto)
+Artifact     -> springboot2-essencials (Não é padrão, apenas o deste projeto)
+Name         -> springboot2-essencials (Não é padrão, apenas o deste projeto)
+Description  -> Curso de Spring Boot do DevDojo (Não é padrão, apenas o deste projeto)
+Package name -> springboot.essencials.springboot2essencials (Não é padrão, apenas o deste projeto)
+
+Packaging    -> Jar
+Java         -> 17 (Não é padrão, apenas o deste projeto)
+
+Add Dependencies
+
+- DevTools
+- Spring Web
+- Lombok
+
+Gerar e baixar zip
