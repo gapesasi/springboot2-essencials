@@ -1,0 +1,36 @@
+Spring Data JPA
+
+1. Adicionar na interface de repositório:
+
+extends JpaRepository<Anime, Long>
+- Anime: Classe que representa o repositório
+- Long: Atributo que representa o id
+
+Alguns métodos já vem disponíveis pelo JpaRepository
+Ex:
+- findAll()
+- findById()
+- save()
+- delete()
+
+Mas também é possível implementar novos
+Ex:
+- List<Anime> findByName(String name);
+
+2. Adicionar @ em serviço
+
+@RequiredArgsConstructor
+- Realiza injeção de dependência do repositório.
+
+3. Criar classes DTO para representar request bodies e utilizar no controller
+
+Ex:
+
+@Data
+public class AnimePostRequestBody {
+
+//    @NotEmpty
+//    @NotNull
+    @NotBlank(message = "Anime can not be null or empty")
+    private String name;
+}

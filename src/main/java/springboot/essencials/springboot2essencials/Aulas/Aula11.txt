@@ -1,0 +1,7 @@
+@PutMapping
+
+Substitui o estado inteiro do objeto
+
+ - Retorno: return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+https://pt.stackoverflow.com/questions/49322/quais-as-vantagens-de-se-utilizar-os-m%C3%A9todos-http-corretos

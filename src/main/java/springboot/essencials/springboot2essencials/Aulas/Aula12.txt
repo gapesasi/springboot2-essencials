@@ -1,0 +1,29 @@
+Docker
+
+Trabalha simular às máquinas virtuais, mas utiliza o próprio sistema operacional. Containers são
+"versões lite" de máquinas virtuais. Para não rodar 10 máquinas virtuais, são rodados 10 containers
+que reutilzam os recursos do prório sistema operacional.
+
+Uma forma de criar containers: docker-compose.yaml (Identação extremamente importante!!)
+
+version: '3.1'
+services:
+  db:
+    image: mysql                            -> Nesse caso, o banco de dados utilzado
+    container_name: springboot2             -> Nome do Container
+    environment:
+      MYSQL_ROOT_PASSWORD: root             -> Variáveis de ambiente
+    ports:
+      - "3306:3306"                         -> Porta do container : Porta do computador
+    volumes:
+      - springboot2_data:/var/lib/mysql     -> Volume de data e seu caminho
+
+volumes:
+  springboot2_data:                         -> Volume de data
+
+Comandos Docker
+
+docker-compose up                           -> Faz download da imagem e sobe container
+docker-compose down                         -> Deleta container mas mantém volume
+docker ps                                   -> Lista containers que estão sendo executados
+docker ps -a                                -> Lista todos os containers

@@ -1,0 +1,15 @@
+@DeleteMapping
+
+Retorno normalmente é vazio.
+Deleta-se normalmente pelo id.
+
+ - Retorno: return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+RFC7231
+Rerência para implementação do protocolo HTTP
+
+4.2.2
+- Métodos idempotentes
+(Quando você efetua várias requisições para o servidor
+e essas requisições não alteram o estado do servidor)
+ - PUT, DELETE e métodos SAFE tem de ser idempotentes
