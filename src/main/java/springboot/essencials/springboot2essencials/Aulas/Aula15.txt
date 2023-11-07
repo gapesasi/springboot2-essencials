@@ -1,0 +1,55 @@
+MapStruct
+
+Criar Mappers para transformar DTO em classe
+(sem ter de chamar um builder com propriedades individuais todas as vezes)
+
+    <properties>
+    ...
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+    </properties>
+
+<dependency>
+    <groupId>org.mapstruct</groupId>
+    <artifactId>mapstruct</artifactId>
+    <version>${org.mapstruct.version}</version>
+</dependency>
+
+<plugins>
+
+...
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+            <source>17</source> <!-- depending on your project -->
+            <target>17</target> <!-- depending on your project -->
+            <annotationProcessorPaths>
+                <path>
+                    <groupId>org.mapstruct</groupId>
+                    <artifactId>mapstruct-processor</artifactId>
+                    <version>${org.mapstruct.version}</version>
+                </path>
+                <path>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>${lombok.version}</version>
+                </path>
+                <path>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-mapstruct-binding</artifactId>
+                    <version>0.1.0</version>
+                </path>
+            </annotationProcessorPaths>
+        </configuration>
+    </plugin>
+</plugins>
+
+Criar uma classe abstrata
+@Mapper(componentModel = "spring")
+
+public static final AnimeMapper INSTANCE = Mappers.getMapper(AnimeMapper.class);
+
+Criar métodos abstrato
+public abstract Anime toAnime(AnimePostRequestBody animePostRequestBody);
+public abstract Anime toAnime(AnimePutRequestBody animePutRequestBody);
